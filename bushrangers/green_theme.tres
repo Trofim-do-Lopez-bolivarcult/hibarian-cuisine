@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://c2q5rbl60kfs3"]
+
+[ext_resource type="FontFile" uid="uid://by12gsv4rnv5i" path="res://DS_Sholom_Medium.ttf" id="1_p1ek5"]
+
+[resource]
+default_font = ExtResource("1_p1ek5")

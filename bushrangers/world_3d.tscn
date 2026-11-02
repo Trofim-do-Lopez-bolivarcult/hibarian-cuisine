@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bydl3aopk1nxw"]
+
+[ext_resource type="Script" uid="uid://daidcw42xqv2l" path="res://player_3d.gd" id="1_f718j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+size = Vector3(40, 1, 40)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xrivr"]
+size = Vector3(40, 1, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13qdw"]
+albedo_color = Color(0, 0.8, 0.20784314, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xrivr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1lj4"]
+albedo_color = Color(0.24705882, 0.6392157, 0.3019608, 1)
+
+[node name="World3D" type="Node3D" unique_id=712255704]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1278959553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=668016108]
+shape = SubResource("BoxShape3D_xrivr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1554646791]
+mesh = SubResource("BoxMesh_xrivr")
+surface_material_override/0 = SubResource("StandardMaterial3D_13qdw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=301130659]
+transform = Transform3D(0.7845112, -0.6201146, 0, 0.6201146, 0.7845112, 0, 0, 0, 1, 8.129345, 15.1345215, -5.951626)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=440145007]
+transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0, 6, 10)
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=583345637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_f718j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1565905284]
+shape = SubResource("CapsuleShape3D_xrivr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=146368841]
+mesh = SubResource("CapsuleMesh_xrivr")
+surface_material_override/0 = SubResource("StandardMaterial3D_b1lj4")

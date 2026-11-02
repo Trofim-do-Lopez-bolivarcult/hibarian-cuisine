@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dqyuen72yqox7"]
+
+[ext_resource type="Theme" uid="uid://c2q5rbl60kfs3" path="res://green_theme.tres" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://ce12dj3luin5q" path="res://Logo.png" id="2_fu7sn"]
+[ext_resource type="Script" uid="uid://di13ov246pdmg" path="res://main_menu.gd" id="2_jix8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edg4p"]
+bg_color = Color(0.043137256, 0.18039216, 0.101960786, 0.39215687)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.24705882, 0.6392157, 0.3019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1ek5"]
+bg_color = Color(0.043137256, 0.18039216, 0.101960786, 0.39215687)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.24705882, 0.6392157, 0.3019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7ryi"]
+bg_color = Color(0.043137256, 0.18039216, 0.101960786, 0.39215687)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.24705882, 0.6392157, 0.3019608, 1)
+
+[node name="MainMenu" type="Control" unique_id=708027283]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7vrkn")
+script = ExtResource("2_jix8l")
+
+[node name="Logo" type="TextureRect" parent="." unique_id=2006844761]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 24.0
+offset_right = 343.0
+offset_bottom = 186.0
+texture = ExtResource("2_fu7sn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=208768382]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 203.0
+offset_right = 340.0
+offset_bottom = 566.0
+theme_override_constants/separation = 24
+
+[node name="PlayButton" type="Button" parent="MenuButtons" unique_id=1865609966]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.9372549, 0.105882354, 1)
+theme_override_colors/font_hover_color = Color(0.7254902, 1, 0.7882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.29803923, 0.6862745, 0.3137255, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_edg4p")
+text = "Время веселья 1994г."
+
+[node name="SettingsButton" type="Button" parent="MenuButtons" unique_id=1801022806]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.9372549, 0.105882354, 1)
+theme_override_colors/font_hover_color = Color(0.7254902, 1, 0.7882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.29803923, 0.6862745, 0.3137255, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_p1ek5")
+text = "Настройки"
+
+[node name="QuitButton" type="Button" parent="MenuButtons" unique_id=2054033072]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.9372549, 0.105882354, 1)
+theme_override_colors/font_hover_color = Color(0.7254902, 1, 0.7882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.29803923, 0.6862745, 0.3137255, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_n7ryi")
+text = "Уплыть обратно в Украину"
